@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les titres{% endblock %}
+
+{% block body %}
+  {% for article in articles %}
+  <style>
+  h1{display: inline-block; font-size: 15px; border: 10px solid;}
+  ul{list-style-type: none;}
+</style>
+
+    <div class="example-wrapper">
+      <ul>
+        <li>
+          <a class="answer-link" href="{{ path('afficher_article', { id: article.id }) }}">
+          <h1>Article : {{ article.nom}}! </h1>
+      </a>
+        </li>
+      </ul>
+        
+    </div>
+  {% endfor %}
+{% endblock %}

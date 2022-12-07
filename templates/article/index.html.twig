@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+<style>
+    .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .wrapper code { background: #F5F5F5; padding: 2px 6px;}
+    li {margin: 15px; display: inline-block;}
+  </style>
+
+<div class="example-wrapper">
+    <h1>Bienvenue dans la page Article ! ✅</h1>
+    <div class="wrapper code">
+      <ul>
+        <h2 style="padding-top: 20px; padding-bottom: 20px">Articles par années : </h2>
+
+        <li><a class="btn btn-info" href="{{ path('showByYear', { year: '2015' }) }}">Articles de 2015</a></li>
+        <li><a class="btn btn-info" href="{{ path('showByYear', { year: '2018' }) }}">Articles de 2018</a></li>
+        <li><a class="btn btn-info" href="{{ path('showByYear', { year: '2020' }) }}">Articles de 2020</a></li>
+        <li><a class="btn btn-info" href="{{ path('showByYear', { year: '2021' }) }}">Articles de 2021</a></li>
+        <li><a class="btn btn-info" href="{{ path('showByYear', { year: '2022' }) }}">Articles de 2022</a></li>
+      </ul>
+    </div>
+</div>
+{% endblock %}

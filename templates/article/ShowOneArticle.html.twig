@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L’article choisis en détail {% endblock %}
+
+{% block body %}
+<style>
+  .example-wrapper {margin: 1rem;}
+  .date {color: red; font-weight: bold;}
+</style>
+
+    <div class="example-wrapper">
+      <h1> {{ article.nom}}! </h1>
+      <p>{{article.contenu}}</p>
+      {% if article.contenu|trim is empty %}
+      <p>content not exist</p>
+      {% endif %}
+      <p class="date">{{ article.DateDeCreation|date("d/m/Y") }}</p>
+        
+    </div>
+{% endblock %}

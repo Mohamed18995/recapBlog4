@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}afficher les années{% endblock %}
+
+{% block body %}
+<style>
+  h1{display: inline-block; font-size: 15px; margin-left: 15px; margin-top: 15px; border: 10px solid;}
+</style>
+  {% for article in articles %}
+
+    <div class="example-wrapper">
+        <a class="answer-link" href="{{ path('afficher_article', { id: article.id }) }}">
+          <h1>Article : {{ article.nom }} ! </h1>
+    </div>
+  {% endfor %}
+{% endblock %}

@@ -7,6 +7,11 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css"> 
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{asset('css/app.css')}}"> 
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +19,33 @@
         {% endblock %}
     </head>
     <body>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_article')}}">Articles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
         {% block body %}{% endblock %}
+  <footer class="l-main-footer">
+      <p style="color: red; margin-top: 20%; padding-left: 38%;">Made with <i style="color: red;" class="fa fa-heart"></i> <a style="color: #444; text-decoration: underline;" href="https://symfonycasts.com">Style provenant des tutos SymfonyCasts</a></p>
+    </footer>
+  
     </body>
 </html>
